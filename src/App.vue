@@ -9,7 +9,7 @@
       </select>
     </div>
     <div class='row'>
-    <Races v-model='races' v-on:change='this.updateRaces'/>
+    <Races v-model='races' />
     </div>
   </div>
 </template>
@@ -25,6 +25,9 @@ export default {
   created() {
     // Once the component has been mounted, fetch the races
     this.fetchRaces()
+
+    // Set a interval to refresh the list every minute
+    window.setInterval(this.fetchRaces, 60 * 1000)
   },
   data() {
     return {
@@ -33,9 +36,6 @@ export default {
     }
   },
   methods: {
-    updateRaces() {
-
-    },
     fetchRaces(count) {
       // Default the count to 10 if it is undefined
       if (count === undefined) {

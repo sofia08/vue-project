@@ -45,8 +45,7 @@ export default {
             // The event is occurring
             if (time_left <= 0) {
                 if (time_left <= -60) {
-                    console.log("Remove element from the list & update it")
-                    // TODO: Need to remove once it has started
+                    console.log("Remove element from the list")
                 }
                 return 'now'
             } else if (time_left / 60 >= 1) {
